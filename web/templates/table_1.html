@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}
+Table Page
+{% endblock %}
+{% block content %}
+<main>
+    <section>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Datatables</h5>
+
+                <!-- Table with stripped rows -->
+                <table class="table datatable">
+                    <thead>
+                        <tr>
+                            {% for x in headers %}
+                            <th scope="col">{{x}}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for x in response %}
+                        <tr>
+                            {% for key, value in x.items() %}
+                            <td>{{value}}</td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <!-- End Table with stripped rows -->
+
+            </div>
+        </div>
+
+    </section>
+
+</main><!-- End #main -->
+{% endblock %}
